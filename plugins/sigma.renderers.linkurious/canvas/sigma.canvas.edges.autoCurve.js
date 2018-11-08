@@ -73,6 +73,12 @@
       if (count[key].n > 1 || count[key].i > 0) {
         if (!edge.cc) {
           // update edge type:
+          if (edge.type === 'line' || defaultEdgeType === 'line') {
+            if (!edge.cc_prev_type) {
+              edge.cc_prev_type = edge.type;
+            }
+            edge.type = 'curve';
+          }
           if (edge.type === 'arrow' || edge.type === 'tapered' ||
             defaultEdgeType === 'arrow' || defaultEdgeType === 'tapered') {
 
@@ -81,11 +87,35 @@
             }
             edge.type = 'curvedArrow';
           }
-          else {
+          if (edge.type === 'dashed' || defaultEdgeType === 'dashed') {
             if (!edge.cc_prev_type) {
               edge.cc_prev_type = edge.type;
             }
-            edge.type = 'curve';
+            edge.type = 'curvedDashed';
+          }
+          if (edge.type === 'dashedArrow' || defaultEdgeType === 'dashedArrow') {
+            if (!edge.cc_prev_type) {
+              edge.cc_prev_type = edge.type;
+            }
+            edge.type = 'curvedDashedArrow';
+          }
+          if (edge.type === 'dotted' || defaultEdgeType === 'dotted') {
+            if (!edge.cc_prev_type) {
+              edge.cc_prev_type = edge.type;
+            }
+            edge.type = 'curvedDotted';
+          }
+          if (edge.type === 'dottedArrow' || defaultEdgeType === 'dottedArrow') {
+            if (!edge.cc_prev_type) {
+              edge.cc_prev_type = edge.type;
+            }
+            edge.type = 'curvedDottedArrow';
+          }
+          if (edge.type === 'parallel' || defaultEdgeType === 'parallel') {
+            if (!edge.cc_prev_type) {
+              edge.cc_prev_type = edge.type;
+            }
+            edge.type = 'curvedParallel';
           }
         }
 

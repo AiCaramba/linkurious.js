@@ -47,13 +47,28 @@
 <script src="../src/misc/sigma.misc.drawHovers.js"></script>
 <!-- END SIGMA IMPORTS -->
 <script src="../plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.dashed.js"></script>
+<script src="../plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.dashedArrow.js"></script>
+<script src="../plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.curvedDashed.js"></script>
+<script src="../plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.curvedDashedArrow.js"></script>
+<script src="../plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.curvedDotted.js"></script>
+<script src="../plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.curvedDottedArrow.js"></script>
 <script src="../plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.dotted.js"></script>
+<script src="../plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.dottedArrow.js"></script>
 <script src="../plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.parallel.js"></script>
+<script src="../plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.curvedParallel.js"></script>
 <script src="../plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.tapered.js"></script>
 <script src="../plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.dashed.js"></script>
+<script src="../plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.dashedArrow.js"></script>
+<script src="../plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curvedDashed.js"></script>
+<script src="../plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curvedDashedArrow.js"></script>
+<script src="../plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curvedDotted.js"></script>
+<script src="../plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curvedDottedArrow.js"></script>
 <script src="../plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.dotted.js"></script>
+<script src="../plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.dottedArrow.js"></script>
 <script src="../plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.parallel.js"></script>
+<script src="../plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curvedParallel.js"></script>
 <script src="../plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.tapered.js"></script>
+<script src="../plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.autoCurve.js"></script>
 <div id="container">
   <style>
     #graph-container {
@@ -115,8 +130,15 @@ for (i = 0; i < E; i++) {
       'dashed',
       'dotted',
       'parallel',
-      'tapered'
-    ][Math.round(Math.random()*8)],
+      'tapered',
+      'curvedDashed',
+      'dashedArrow',
+      'curvedDashedArrow',
+      'curvedDotted',
+      'dottedArrow',
+      'curvedDottedArrow',
+      'curvedParallel'
+    ][Math.round(Math.random()*15)],
     size: Math.random()
   });
 }
@@ -136,7 +158,13 @@ s = new sigma({
     minEdgeSize: 0.1,
     maxEdgeSize: 2,
     enableEdgeHovering: true,
-    edgeHoverSizeRatio: 2
+    edgeHoverSizeRatio: 2,
+
+    autoCurveRatio: 1,
+    autoCurveSortByDirection: true
   }
 });
+
+sigma.canvas.edges.autoCurve(s);
+s.refresh();
 </script>

@@ -214,8 +214,15 @@ To use, include all .js files under the canvas/ folder.
 ### Shapes
 The following shapes are available:
   * `dashed`
+  * `curvedDashed`
+  * `dashedArrow`
+  * `curvedDashedArrow`
   * `dotted`
+  * `curvedDotted`
+  * `dottedArrow`
+  * `curvedDottedArrow`
   * `parallel`: two solid parallel lines representing an edge aggregating multiple edges in the original graph.
+  * `curvedParallel`
   * `tapered` (see Danny Holten, Petra Isenberg, Jean-Daniel Fekete, and J. Van Wijk (2010) Performance Evaluation of Tapered, Curved, and Animated Directed-Edge Representations in Node-Link Graphs. Research Report, Sep 2010.)
 
 To assign a shape renderer to an edge, simply set `edge.type='shape-name'` e.g. `edge.type='dotted'`. The default renderer implemented by sigma.js is named `def` (alias `line`) - see also [generic custom edge renderer example](../../examples/custom-edge-renderer.html).

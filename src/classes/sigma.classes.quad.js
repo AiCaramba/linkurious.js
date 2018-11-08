@@ -729,7 +729,10 @@
         };
 
         // Inserting edge
-        if (edges[i].type === 'curve' || edges[i].type === 'curvedArrow') {
+        if (edges[i].type === 'curve' || edges[i].type === 'curvedArrow' ||
+          edges[i].type == 'curvedDashed' || edges[i].type == 'curvedDashedArrow' ||
+          edges[i].type == 'curvedDotted' || edges[i].type == 'curvedDottedArrow' ||
+          edges[i].type == 'curvedParallel') {
           if (source.id === target.id) {
             n = {
               x: source[prefix + 'x'],
