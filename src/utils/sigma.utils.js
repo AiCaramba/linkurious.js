@@ -433,12 +433,14 @@
    * @param  {number} size The node size.
    * @return {x1,y1,x2,y2} The coordinates of the two control points.
    */
-  sigma.utils.getSelfLoopControlPoints = function(x , y, size) {
+  sigma.utils.getSelfLoopControlPoints = function(x , y, size, cc = 1) {
+    cc = this.extend(cc, { x: 2, y: 6 });
+    console.log(cc)
     return {
-      x1: x - size * 7,
+      x1: x - size * 7 - size * 7 / cc.y,
       y1: y,
       x2: x,
-      y2: y + size * 7
+      y2: y + size * 7 + size * 7 / cc.y
     };
   };
 

@@ -50,7 +50,7 @@
           settings('fontStyle');
 
     if (source.id === target.id) {
-      cp = sigma.utils.getSelfLoopControlPoints(sX, sY, sSize);
+      cp = sigma.utils.getSelfLoopControlPoints(sX, sY, sSize, edge.cc);
       c = sigma.utils.getPointOnBezierCurve(
         t, sX, sY, tX, tY, cp.x1, cp.y1, cp.x2, cp.y2
       );

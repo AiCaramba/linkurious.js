@@ -37,7 +37,7 @@
         vY;
 
     cp = (source.id === target.id) ?
-      sigma.utils.getSelfLoopControlPoints(sX, sY, tSize) :
+      sigma.utils.getSelfLoopControlPoints(sX, sY, tSize, edge.cc) :
       sigma.utils.getQuadraticControlPoint(sX, sY, tX, tY, edge.cc);
 
     if (source.id === target.id) {

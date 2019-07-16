@@ -43,16 +43,16 @@
     context.save();
 
     cp1 = (source.id === target.id) ?
-      sigma.utils.getSelfLoopControlPoints(c.xi, c.yi, sSize) :
+      sigma.utils.getSelfLoopControlPoints(c.xi, c.yi, sSize, edge.cc) :
       sigma.utils.getQuadraticControlPoint(c.xi, c.yi, d.xi_prime, d.yi_prime, edge.cc);
 
     cp2 = (source.id === target.id) ?
-      sigma.utils.getSelfLoopControlPoints(c.xi_prime, c.yi_prime, sSize) :
+      sigma.utils.getSelfLoopControlPoints(c.xi_prime, c.yi_prime, sSize, edge.cc) :
       sigma.utils.getQuadraticControlPoint(c.xi_prime, c.yi_prime, d.xi, d.yi, edge.cc);
 
 
     cp = (source.id === target.id) ?
-      sigma.utils.getSelfLoopControlPoints(sX, sY, sSize) :
+      sigma.utils.getSelfLoopControlPoints(sX, sY, sSize, edge.cc) :
       sigma.utils.getQuadraticControlPoint(sX, sY, tX, tY, edge.cc);
 
 

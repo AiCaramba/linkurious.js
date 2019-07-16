@@ -197,7 +197,8 @@
                 cp = sigma.utils.getSelfLoopControlPoints(
                   source[prefix + 'x'],
                   source[prefix + 'y'],
-                  source[prefix + 'size']
+                  source[prefix + 'size'],
+                  edge.cc
                 );
                 if (
                   sigma.utils.isPointOnBezierCurve(

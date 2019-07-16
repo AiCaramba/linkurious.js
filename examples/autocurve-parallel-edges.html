@@ -115,12 +115,27 @@ for (i = 0; i < E; i++) {
     source: source,
     target: target,
     size: 2,
-    type: Math.random() > 0.5 ? 'arrow' : null,
+    type: Math.random() > 0.5 ? 'arrow' : 'line',
     color: color,
     hover_color: '#000'
   });
 }
 
+for (i = 50; i < 55; i++) {
+  var source = 'n0';
+  var target = 'n0';
+  var color = '#1fcd40';
+  g.edges.push({
+    id: 'e' + i,
+    label: 'Edge ' + i,
+    source: source,
+    target: target,
+    size: 2,
+    type: Math.random() > 0.5 ? 'arrow' : 'line',
+    color: color,
+    hover_color: '#000'
+  });
+}
 
 s = new sigma({
   graph: g,

@@ -134,7 +134,7 @@
     selfLoopToSquare: function(n) {
       // Fitting to the curve is too costly, we compute a larger bounding box
       // using the control points:
-      var cp = sigma.utils.getSelfLoopControlPoints(n.x, n.y, n.size);
+      var cp = sigma.utils.getSelfLoopControlPoints(n.x, n.y, n.size, n.cc);
 
       // Bounding box of the point and the two control points:
       var minX = Math.min(n.x, cp.x1, cp.x2),

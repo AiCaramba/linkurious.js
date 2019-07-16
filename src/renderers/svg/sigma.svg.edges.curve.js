@@ -68,7 +68,7 @@
       path.setAttributeNS(null, 'stroke-width', edge[prefix + 'size'] || 1);
 
       if (source.id === target.id) {
-        cp = sigma.utils.getSelfLoopControlPoints(sX, sY, sSize);
+        cp = sigma.utils.getSelfLoopControlPoints(sX, sY, sSize, edge.cc);
         // Path
         p = 'M' + sX + ',' + sY + ' ' +
             'C' + cp.x1 + ',' + cp.y1 + ' ' +

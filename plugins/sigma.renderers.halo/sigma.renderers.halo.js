@@ -248,7 +248,7 @@
 
       if (edge.type === 'curve' || edge.type === 'curvedArrow') {
         if (edge.source === edge.target) {
-          cp = sigma.utils.getSelfLoopControlPoints(sX, sY, sSize);
+          cp = sigma.utils.getSelfLoopControlPoints(sX, sY, sSize, edge.cc);
           context.bezierCurveTo(cp.x1, cp.y1, cp.x2, cp.y2, tX, tY);
         }
         else {
